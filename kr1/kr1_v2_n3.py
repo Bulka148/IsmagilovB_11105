@@ -1,11 +1,11 @@
 #2 ВАРИАНТ (3 ЗАДАНИЕ)
 
-def gen(stroka):
+def gen(st):
     while True:
-        for charlie in stroka:
+        for charlie in st:
             yield charlie
 
-        for charlie in reversed(stroka):
+        for charlie in reversed(st):
             yield charlie
 
 
