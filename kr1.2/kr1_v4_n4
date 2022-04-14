@@ -1,0 +1,4 @@
+#ВАРИАНТ 4 (ЗАДАНИЕ 4)
+
+re.findall(r'\b(?:aa)+[^a][a-z]*b\b|aab','aaxxab'))
+re.findall(r'.bc\..', 'abc.a'))
