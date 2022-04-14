@@ -25,3 +25,5 @@ class MyIterator:
 a = MyIterator('Hello there!')
 for i in a:
     print(i)
+
+#-_0

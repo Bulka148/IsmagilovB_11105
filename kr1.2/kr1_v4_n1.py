@@ -5,3 +5,5 @@ foo = lambda x: filter(lambda i: '2' in str(i), a(x))
 foo1 = lambda x, y: map(lambda x: x**y, foo(x))
 print(list(foo(10)))
 print(list(foo1(10, 2)))
+
+#-_-
