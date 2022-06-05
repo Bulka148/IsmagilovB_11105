@@ -1,8 +1,15 @@
-from functools import reduce
-
-a = input().split(',')
-a_pr = list(filter(lambda s: len(set(s.lower())) > 3, a))
-a1 = list(map(lambda s: (s[0].upper() if 'a' <= s[0] <= 'z' else s[0].lower()) + s[1:], a_pr))
-summ = reduce(lambda l1, l2: l1 + l2, [len(s) for s in a if s.count('foo') > 0])
-
-print(a1, summ)
+import functools
+words=input().split()
+def validate(word):
+    letters=[]
+    for i in word:
+        if i.upper() not in letters:
+            letters.append(i.upper())
+    if len(letters)>3:
+        return True
+    return False
+if __name__=='__main__':
+    answer1=list(filter(validate, words))
+    print(list(map(lambda a: a[0].swapcase()+a[1:], answer1)))
+    answer2 = list(filter(lambda x: 'foo' in x, words))
+    print(len(functools.reduce(lambda a,b: a+b, answer2)))

@@ -1,21 +1,21 @@
-class Some_class:
-    global glob_var
-
-    def some_metod(self, var2: int = 1, var3: int = 1) -> None:
-        # enclosing
-        encl_var: int = 2
-
-        def some_metod_in_menod() -> None:
-            # local
-            loc_var: int = 3
-            print(f'sum = {glob_var + encl_var + loc_var}')
-
-        some_metod_in_menod()
-        print(f'var2 + var3 = {var2 + var3}')
+# глобальная переменная
+v1: str = 'Python'
 
 
-# global
-glob_var: int = 1
+class Class:
+    global v1
 
-sc = Some_class()
-sc.some_metod()
+    def metod1(self, sep1: str = ' ', sep2: str = ' ', end: str='!') -> str:
+        def metod2() -> str:
+            # локальная переменная
+            v3: str = 'best'
+            return v3
+
+        # полулокальная(enclosing) переменная
+        v2: str = 'is the'
+
+        return v1 + sep1 + v2 + sep2 + metod2() + end
+
+
+myclass = Class()
+print(myclass.metod1())
