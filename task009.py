@@ -1,23 +1,28 @@
-class Animal:
-    num_animals = 0
+class Plant:
+    glb = 'Plant'
 
-    def __init__(self, name):
+    def __init__(self, name: str = None):
         self.name = name
-        Animal.num_animals += 1
 
-    def get_name(self):
-        return self.name
-
-    def get_num_animals(self=None):
-        return Animal.num_animals
+    @classmethod
+    def is_predator(cls, name=None):
+        if name == None:
+            print(cls.glb + ' Is a herbivore')
+        else:
+            print(cls.glb + ' Is a predator')
 
     @staticmethod
-    def stutic_metod():
-        print('Who am I?')
+    def foo(age):
+        print('I am', age, 'years old')
+
+    def my_name(self):
+        if self.name == None:
+            print(self.glb +'. ' + ' I am unknown ')
+        else:
+            print(self.glb + '. ' + 'My name is ' + self.name)
 
 
-slon = Animal('slon')
-print(slon.get_name())
-print(slon.get_num_animals())
-print(Animal.get_num_animals())
-Animal.stutic_metod()
+myAnimal = Plant('Rose')
+myAnimal.is_predator(myAnimal.name)
+Plant.is_predator('Rose_classic')
+Plant.foo(7)
